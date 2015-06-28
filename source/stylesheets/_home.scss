@@ -13,7 +13,13 @@
     left: 0;
     z-index: 20;
     top: 0;
-    height: 140px;
+    height: 110px;
+
+    p {
+      font-size: .75em;
+      width: 60%;
+      margin: 15px auto;
+    }
     @include breakpoint(tablet-desktop) {
       height: 200px;
     }
@@ -21,7 +27,7 @@
 
   h1 {
     color: $black;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 20px 0 0 0;
     padding: 0;
     @include breakpoint(tablet-desktop) {
@@ -79,7 +85,7 @@
     @include clearfix;
     @include box-sizing;
     &.first {
-      margin-top: 140px;
+      margin-top: 110px;
       @include breakpoint(tablet-desktop) {
         margin-top: 200px;
       }
