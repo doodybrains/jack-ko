@@ -1,0 +1,43 @@
+@import "variables_mixins";
+
+.home {
+  padding: 20px;
+  text-align: center;
+  color: $black;
+  h1 {
+    color: $black;
+    font-family: "effra";
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    @include breakpoint(tablet-desktop) {
+      font-size: 3.25em;
+    }
+  }
+
+  .grid-row {
+    width: 100%;
+    @include clearfix;
+    @include box-sizing;
+
+    .grid-col {
+      padding: 10px;
+      @include box-sizing;
+      @include breakpoint(tablet-desktop) {
+        float: left;
+        padding: 20px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .col-3 {
+      @include breakpoint(tablet-desktop) {
+        width: 33.33%;
+      }
+    }
+  }
+}
