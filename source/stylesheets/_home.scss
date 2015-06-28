@@ -1,17 +1,76 @@
 @import "variables_mixins";
 
 .home {
+  font-family: "effra";
   padding: 20px;
   text-align: center;
   color: $black;
+
+  header {
+    position: fixed;
+    background: rgba(255,255,255,.5);
+    right: 0;
+    left: 0;
+    z-index: 20;
+    top: 0;
+    height: 140px;
+    @include breakpoint(tablet-desktop) {
+      height: 200px;
+    }
+  }
+
   h1 {
     color: $black;
-    font-family: "effra";
     font-size: 2em;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
     @include breakpoint(tablet-desktop) {
       font-size: 3.25em;
+      margin-top: 50px;
+    }
+  }
+
+  .contain-it {
+    position: relative;
+    &:hover {
+      .parallelogram {
+        @include breakpoint(tablet-desktop) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .parallelogram {
+    display: none;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    transform: skew(-20deg);
+    background: $black;
+    width: 45%;
+    height: 45%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        color: #fff;
+        -webkit-transform: skew(20deg);
+        -moz-transform: skew(20deg);
+        -o-transform: skew(20deg);
+        transform: skew(20deg);
+        text-transform: uppercase;
+        letter-spacing: .09em;
+      }
     }
   }
 
@@ -19,7 +78,12 @@
     width: 100%;
     @include clearfix;
     @include box-sizing;
-
+    &.first {
+      margin-top: 140px;
+      @include breakpoint(tablet-desktop) {
+        margin-top: 200px;
+      }
+    }
     .grid-col {
       padding: 10px;
       @include box-sizing;

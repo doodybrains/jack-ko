@@ -20,6 +20,8 @@ var site = {
 
     var throttledScroll = _.throttle(site.scrollHandler, 50);
     $(window).scroll(throttledScroll);
+
+
   },
 
   isMobile: function () {
@@ -32,5 +34,9 @@ var site = {
 
     site.client.width = $(window).width();
     site.client.height = $(window).height();
+
+    var hoverHeight = $('.parallelogram').height();
+    var verticalAlign = parseInt(hoverHeight/2);
+    $('ul').css('margin-top', verticalAlign-20);
   }
 };
